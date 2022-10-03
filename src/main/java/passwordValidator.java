@@ -12,4 +12,8 @@ public class passwordValidator {
         }
         return false;
     }
+
+    public static boolean isVaild(String password) {
+       return containsDiget(password) && isLongerThan7(password);
+    }
 }

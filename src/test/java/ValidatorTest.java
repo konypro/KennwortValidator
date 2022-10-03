@@ -19,4 +19,16 @@ public class ValidatorTest {
     void passwordContainNoDiget() {
         Assertions.assertEquals(false, passwordValidator.containsDiget("testABC"));
     }
+    @Test
+    void passwordContainNoDigitButIsLongEnough(){
+        Assertions.assertEquals(false,passwordValidator.isVaild("Ich bin lang genug"));
+    }
+    @Test
+    void passwordContainDigitButIsNotLongEnough(){
+        Assertions.assertEquals(false,passwordValidator.isVaild("1234e"));
+    }
+    @Test
+    void passwordIsValid(){
+        Assertions.assertEquals(true,passwordValidator.isVaild("test1234567"));
+    }
     }
